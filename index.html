@@ -1,17 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles/main.css">
-    <title>Hello World</title>
+    <title>VisoTone</title>
 </head>
 <body>
-    <div>
-        <div>
-            <h1>Hello World</h1>
-
+    <header>
+        <div class="logo">
+            <img src="./assets/logo.png" alt="">
         </div>
-    </div>
+        <div class="headerText">
+            <h1>Transform your images and videos into unique sounds.</h1>
+            <button>Lets start</button>
+        </div>
+    </header>
+    <main>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Nahrát soubor a popis</legend>
+
+                <label for="file-input" class="file-label">
+                    <span id="file-placeholder">Nahrát obrázek/video</span>
+                    <span>Podporované formáty jpg, png, mp4, mov</span>
+                    <input type="file" name="file" id="file-input" accept="image/*,video/*" required>
+                </label>
+    
+                <label for="environment-input">Prostředí:</label>
+                <input type="text" name="environment" id="environment-input" placeholder="Zadejte prostředí" required>
+            </fieldset>
+    
+            <button type="submit">Generuj</button>
+        </form>
+        
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const placeholder = document.getElementById('file-placeholder');
+    
+        fileInput.addEventListener('change', () => {
+            const fileName = fileInput.files[0]?.name || "Vyberte obrázek nebo video";
+            placeholder.textContent = fileName;
+        });
+    </script>
 </body>
 </html>
