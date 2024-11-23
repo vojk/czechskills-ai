@@ -16,28 +16,9 @@
             <button>Lets start</button>
         </div>
     </header>
-    <main>
-        <form action="/upload" method="post" enctype="multipart/form-data">
-            <fieldset>
-                <legend>Nahrát soubor a popis</legend>
+    <div class="page">
 
-                <label for="file-input" class="file-label">
-                    <span id="file-placeholder">Nahrát obrázek/video</span>
-                    <span>Podporované formáty jpg, png, mp4, mov</span>
-                    <input type="file" name="file" id="file-input" accept="image/*,video/*" required>
-                </label>
-    
-                <label for="environment-input">Prostředí:</label>
-                <input type="text" name="environment" id="environment-input" placeholder="Zadejte prostředí" required>
-            </fieldset>
-    
-            <button type="submit">Generuj</button>
-        </form>
-        
-    </main>
-    <footer>
-
-    </footer>
+    </div>
     <script>
         const fileInput = document.getElementById('file-input');
         const placeholder = document.getElementById('file-placeholder');
