@@ -46,6 +46,18 @@ button::before {
   mask-composite: exclude; /* Standard mask for other browsers */
 }
 
+/* Hide the radio button circle */
+.options input[type="radio"] {
+  display: none;
+}
+.options input[type="radio"]:checked + span {
+  font-weight: bold;
+  color: #007BFF;
+  background-color: #e6f7ff; /* Light blue background for highlight */
+  padding: 0.5rem 1rem; /* Ensure text inside label is properly padded */
+  border-radius: 4px;
+}
+
 /* Style for the file input container */
 .file-label {
   display: inline-block;
@@ -109,7 +121,11 @@ header {
   }
 }
 
-
-svg {
-  width: 100%;
+.page {
+  height: 400vh;
+  background-image: url(../images/page.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
